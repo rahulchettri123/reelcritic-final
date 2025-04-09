@@ -8,7 +8,7 @@ import { AuthProvider } from "@/contexts/auth-context"
 import { Toaster } from "@/components/ui/toaster"
 
 const inter = Inter({ subsets: ["latin"] })
-
+// dsfdsfsdfsd
 export const metadata = {
   title: "ReelCritic - Movie Reviews & Discussions",
   description: "A social media platform for movie critics and enthusiasts",
