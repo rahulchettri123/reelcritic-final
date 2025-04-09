@@ -195,14 +195,14 @@ export function Feed({ initialReviews = [], limit: propLimit }: FeedProps) {
       <CreateReview onReviewCreated={handleReviewCreated} />
       
       {/* Filter controls - Sticky */}
-      <div className="sticky top-[64px] z-20 pt-0 pb-2 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="flex flex-wrap items-center justify-between gap-2 border rounded-lg p-2 sm:p-3 bg-background shadow-sm">
-          <div className="flex flex-wrap items-center gap-1 sm:gap-2">
+      <div className="sticky top-[64px] z-20 pt-0 pb-2 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 max-w-full overflow-x-hidden">
+        <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center sm:justify-between gap-2 border rounded-lg p-2 sm:p-3 bg-background shadow-sm">
+          <div className="flex flex-wrap items-center gap-1 sm:gap-2 w-full sm:w-auto">
             <h3 className="text-xs sm:text-sm font-medium">Filters:</h3>
             
             {/* Rating filter */}
             <Select value={filterRating} onValueChange={setFilterRating}>
-              <SelectTrigger className="w-[120px] h-8 text-xs sm:text-sm">
+              <SelectTrigger className="w-[100px] sm:w-[120px] h-8 text-xs sm:text-sm">
                 <SelectValue placeholder="Rating" />
               </SelectTrigger>
               <SelectContent>
@@ -247,7 +247,7 @@ export function Feed({ initialReviews = [], limit: propLimit }: FeedProps) {
             
             {/* Applied filters badges */}
             {filtersApplied && (
-              <div className="flex flex-wrap gap-1.5 ml-2">
+              <div className="flex flex-wrap gap-1.5 mt-1 sm:mt-0 sm:ml-2 w-full sm:w-auto">
                 {filterRating !== "all" && (
                   <Badge 
                     variant="secondary" 
@@ -292,7 +292,7 @@ export function Feed({ initialReviews = [], limit: propLimit }: FeedProps) {
             )}
           </div>
           
-          <div className="flex gap-1 sm:gap-2">
+          <div className="flex gap-1 sm:gap-2 mt-2 sm:mt-0">
             <Button 
               onClick={handleApplyFilters} 
               size="sm"

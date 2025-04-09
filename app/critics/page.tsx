@@ -5,7 +5,7 @@ import { PageHeader } from "@/components/page-header"
 
 export default function CriticsPage() {
   return (
-    <div className="py-6 px-4 sm:px-6 md:px-8 mx-auto w-full max-w-7xl">
+    <div className="py-6 px-4 sm:px-6 md:px-8 mx-auto w-full max-w-7xl overflow-x-hidden">
       <PageHeader
         heading="Critics' Feed"
         subheading="See the latest movie reviews and discussions from our community"
