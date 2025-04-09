@@ -5,32 +5,27 @@ try {
   // ignore error
 }
 
-/** @type {import('next').NextConfig} */
+/**
+ * @type {import('next').NextConfig}
+ */
 const nextConfig = {
-  eslint: {
-    ignoreDuringBuilds: true,
+  // Use the standalone output mode for better compatibility
+  output: 'export',
+  
+  // Disable image optimization as it requires server components
+  images: {
+    unoptimized: true,
   },
+  
+  // Disable type checking and linting during build
   typescript: {
     ignoreBuildErrors: true,
   },
-  images: {
-    unoptimized: true,
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: '**',
-      },
-    ],
+  eslint: {
+    ignoreDuringBuilds: true,
   },
-  experimental: {
-    // Removed potentially problematic experimental features
-    // webpackBuildWorker: true,
-    // parallelServerBuildTraces: true,
-    // parallelServerCompiles: true,
-  },
-  // Add specific output configuration for Netlify
-  output: 'standalone',
-  // Add powered by header removal
+  
+  // Disable powered by header
   poweredByHeader: false,
 }
 

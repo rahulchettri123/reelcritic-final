@@ -1,0 +1,5 @@
+# Redirect all requests to index.html, so client-side routing works
+/*    /index.html   200
+
+# Special handling for API routes
+/api/*  /api-fallback.html  200 
