@@ -15,6 +15,12 @@ const nextConfig = {
   },
   images: {
     unoptimized: true,
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**',
+      },
+    ],
   },
   experimental: {
     // Removed potentially problematic experimental features
@@ -22,6 +28,10 @@ const nextConfig = {
     // parallelServerBuildTraces: true,
     // parallelServerCompiles: true,
   },
+  // Add specific output configuration for Netlify
+  output: 'standalone',
+  // Add powered by header removal
+  poweredByHeader: false,
 }
 
 mergeConfig(nextConfig, userConfig)
